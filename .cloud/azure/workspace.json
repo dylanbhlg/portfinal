@@ -1,0 +1,5 @@
+{
+    "name": "demoAzMLWorkspace",
+    "resource_group": "testingcogs",
+    "create_workspace": true
+}
