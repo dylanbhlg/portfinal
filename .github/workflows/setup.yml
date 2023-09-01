@@ -4,15 +4,6 @@ on:
   push:
     paths: 
       - '.github/workflows/setup.yml'
-# CONFIGURATION 
-#
-# 1. Set up the following secrets in your repository: 
-#   AZURE_RESOURCE_GROUP 
-#   STORAGE_ACCOUNT 
-env:
-  AZURE_RESOURCE_GROUP: demoforpres  #set this to your resource group name 
-  #STORAGE_ACCOUNT: demoforpres           #set this to your storage-account-name
-  
   workflow_dispatch:
         inputs:
           port_payload:
@@ -20,6 +11,15 @@ env:
             description: Port's payload, including details for who triggered the action and
               general context (blueprint, run id, etc...)
             type: string 
+# CONFIGURATION 
+#
+# 1. Set up the following secrets in your repository: 
+#   AZURE_RESOURCE_GROUP 
+#   STORAGE_ACCOUNT 
+env:
+  AZURE_RESOURCE_GROUP: demoforpres 
+  #STORAGE_ACCOUNT: demoforpres
+  
 jobs:
   deployment:
     runs-on: ubuntu-latest
