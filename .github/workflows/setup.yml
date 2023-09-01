@@ -1,5 +1,9 @@
 name: Infra Deployment and Training
 
+env:
+  AZURE_RESOURCE_GROUP: demoforpres 
+  #STORAGE_ACCOUNT: demoforpres
+
 on:
   push:
     paths: 
@@ -11,14 +15,6 @@ on:
             description: Port's payload, including details for who triggered the action and
               general context (blueprint, run id, etc...)
             type: string 
-# CONFIGURATION 
-#
-# 1. Set up the following secrets in your repository: 
-#   AZURE_RESOURCE_GROUP 
-#   STORAGE_ACCOUNT 
-env:
-  AZURE_RESOURCE_GROUP: demoforpres 
-  #STORAGE_ACCOUNT: demoforpres
   
 jobs:
   deployment:
