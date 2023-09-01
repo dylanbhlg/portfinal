@@ -19,8 +19,6 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check Out Repository
@@ -45,6 +43,7 @@ jobs:
             --template-file $GITHUB_WORKSPACE/infra/deploy.core-infra.json \
             --parameters $GITHUB_WORKSPACE/infra/params.deploy.core-infra.json \
             patToken=${{secrets.PATTOKEN}} repo_name=$GITHUB_REPOSITORY DataLakestorageName=${{ env.STORAGE_ACCOUNT }}
+            
   create-entity-in-port-and-update-run:
     runs-on: ubuntu-latest
     steps:
